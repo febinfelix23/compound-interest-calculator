@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investors</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./favicon.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar bg-light shadow">
+      <div class="container-fluid">
+        <span class="navbar-brand fs-2 fw-bold lh-sm">
+          <img src="./favicon.png" alt="logo" width="50vh" class="rounded-5"> Investors
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Body -->
+  <div id="body" class="mt-5">
+    <div class="container col-lg-12">
+      <h1 class="fw-bold">Compound Interest Calculator</h1>
+      <p>
+        In the investment spectrum, compounding is synonymous with building wealth over time. Compounding, or compound
+        interest, is when you earn interest on the initial principal and previous interest amounts. Since the interest
+        is
+        added to the initial investment and the new interest, the asset continues to grow throughout the investment
+        period. You can use a compound interest calculator for ideal investment planning.
+      </p>
+    </div>
+
+    <div class="calculator container col-xs-12">
+      <div class="col-lg-6 col-xs-12">
+        <form>
+
+          <div class="d-flex justify-content-between bg-secondary-subtle p-1 rounded-3">
+            <label for="principal" class="mt-2 ms-3">Principal Amount:</label>
+            <div class="input-container w-50">
+              <input type="text" id="principal" class="form-control" value="1000">
+              <span class="unit text-dark fs-4">₹</span>
+            </div>
+          </div>
+          <div class="slider">
+            <input id="slider1" type="range" min="1000" max="10000000" value="1000">
+          </div>
+          <br>
+
+          <div class="d-flex justify-content-between bg-secondary-subtle p-1 rounded-3">
+            <label for="rate" class="mt-2 ms-3">Rate of Interest (P.A):</label>
+            <div class="input-container w-50">
+              <input type="text" id="rate" class="form-control" value="1">
+              <span class="unit text-dark fs-4">%</span>
+            </div>
+          </div>
+          <div class="slider">
+            <input id="slider2" type="range" min="1" max="100" value="1">
+          </div>
+          <br>
+
+          <div class="d-flex justify-content-between bg-secondary-subtle p-1 rounded-3">
+            <label for="years" class="mt-2 ms-3">Time Period (Years):</label>
+            <div class="input-container w-50">
+              <input type="text" id="years" class="form-control" value="1">
+              <span class="unit text-dark fs-5 mt-1">Yrs</span>
+            </div>
+          </div>
+          <div class="slider">
+            <input id="slider3" type="range" min="1" max="30" value="1">
+          </div>
+
+          <div class="buttons mt-4">
+            <button type="button" class="btn" onclick="calculate()">Calculate</button>
+            <button type="button" class="btn ms-3" onclick="resetAll()">Reset</button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- Chart -->
+      <div class="col-lg-6 col-xs-12 p-3">
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="displayData container col-lg-12 bg-secondary-subtle text-center rounded-4 p-3">
+      <div class="col-lg-4 data">
+        <h4>Invested Amount</h4>
+        <h2 id="amount">--</h2>
+      </div>
+
+      <div class="col-lg-4 data">
+        <h4>Total Interest</h4>
+        <h2 id="interest">--</h2>
+      </div>
+
+      <div class="col-lg-4">
+        <h4>Maturity Value</h4>
+        <h2 id="maturity">--</h2>
+      </div>
+    </div>
+
+    <div class="description container mt-5">
+      <p>
+        Compounding interest, as opposed to simple interest, is the situation where your wealth increases exponentially
+        because you earn interest on your total investments, the aggregation of your principal amount and the interest
+        it incurs. Mathematically, the possibilities of compound interest are endless. Most of the modern business
+        thrives on it. One needs a reliable <span class="fw-bold">compound interest calculator</span> to ensure they are
+        receiving the right ROI.
+      </p>
+
+      <h3 class="mt-5">How can a Compound Interest Calculator Help You?</h3>
+      <p>
+        The nature of compound interest makes it extremely lucrative for businesses. When you use a compound interest
+        calculator online, you can avail the following benefits.
+
+      <ul>
+        <li>It helps you determine an accurate figure and percentage of returns over a certain time frame.</li>
+        <li>A reliable calculator helps you identify how much investment you might need over a time frame. The required
+          corpus of funds can then be arranged with convenience.</li>
+        <li>We offer you a customizable compound interest rate calculator which helps you assign values based on
+          your requirements.</li>
+        <li>A compound interest calculator helps calculate the total returns as well as yearly returns in case you need
+          to consider breaking such an investment as per your future financial planning. If so, it is also advisable to
+          consider pre-closure charges of the investment corpus.</li>
+        <li>To keep deposit rates in line with the market, the Indian Government decided to annualize the interest rates
+          on National Savings Certificates. The changes were effected in 2016. To determine how much your savings
+          schemes now work, you must use an online calculator.</li>
+      </ul>
+      </p>
+
+      <h3 class="mt-5">How to Calculate Compound Interest?</h3>
+      <p>
+        We uses a globally standardized method to determine the total compound interest accrued. The formula is –
+        <br>
+        A = P (1 + r/n) ^ nt
+        <br>
+        The variables in the formula are the following.
+
+      <table class="mt-4 mb-4">
+        <tbody>
+          <tr>
+            <td>P</td>
+            <td>Principal Amount</td>
+          </tr>
+
+          <tr class="bg-body-secondary">
+            <td>A</td>
+            <td>Compound interest</td>
+          </tr>
+
+          <tr>
+            <td>R/r</td>
+            <td>Rate of interest</td>
+          </tr>
+
+          <tr class="bg-body-secondary">
+            <td>N/n</td>
+            <td>Number of times interest compounds in a year</td>
+          </tr>
+
+          <tr>
+            <td>T/t</td>
+            <td>Number of years</td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p>
+        For example, if you invest Rs. 50,000 with an annual interest rate of 10% for 5 years, the returns for the first
+        year will be 50,000 x 10/100 or Rs. 5,000.
+        For the second year, the interest will be calculated on Rs. 50,000 + Rs. 5000 or Rs. 55,000. The interest will
+        be
+        Rs. 5550.
+        For the third year, the amount will stand at Rs 6055 and so on.
+        Obviously, it is difficult to calculate these amounts manually. That is why you need a <span
+          class="fw-bold">compound interest calculator</span> in India to make the task easier.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-body-secondary text-center">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+        data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #3b5998;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #55acee;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #dd4b39;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- Github -->
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #333333;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3 text-light" style="background-color: #387FC8;">
+      © 2024 Copyright:
+      <a class="text-light" href="https://www.linkedin.com/in/febin-felix-409791287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Febin Felix</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
